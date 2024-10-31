@@ -1,20 +1,20 @@
 rust_format:
-	cargo fmt
+	cargo fmt --manifest-path ./rustsql/Cargo.toml
 
 rust_run:
-	cargo run
+	cargo run --manifest-path ./rustsql/Cargo.toml
 
 rust_lint:
-	cargo clippy
+	cargo clippy --manifest-path ./rustsql/Cargo.toml
 
 rust_test:
-	cargo test
+	cargo test --manifest-path ./rustsql/Cargo.toml
 
 rust_check:
-	cargo check
+	cargo check --manifest-path ./rustsql/Cargo.toml
 
 release:
-	cargo build --release
+	cargo build --release --manifest-path ./rustsql/Cargo.toml
 
 all: rust_format rust_lint rust_test rust_run
 
