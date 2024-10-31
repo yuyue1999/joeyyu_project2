@@ -1,0 +1,44 @@
+name: rust
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Check
+      run: make rust_check
+
+    - name: Format
+      run: make rust_format
+
+    - name: Test
+      run: make rust_test
+
+    - name: Link
+      run: make rust_lint
+
+    - name: Release
+      run: make release
+
+    - name: Upload Binary Artifact to Github
+      uses: actions/upload-artifact@v4
+      with:
+        name: joeyu_assignment8
+        path: target/release/joeyu_assignment8
