@@ -53,6 +53,9 @@ The following `.gitlab-rust.yml` configuration file is used to automate building
 
 For a quick overview of the CLI and its functions, please check out the video demo on [YouTube](https://youtu.be/MuREU6UFNgs).
 
+## artifact
+![workflow.png](workflow.png)
+
 ## License
 
 This project is licensed under the MIT License.
